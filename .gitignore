@@ -1,0 +1,13 @@
+Directorios de configuracion de IntelliJ
+.idea/
+*.iml
+
+Directorios de compilacion
+target/
+out/
+
+Archivos de log
+*.log
+
+Archivos de Sistema
+.DS_Store
