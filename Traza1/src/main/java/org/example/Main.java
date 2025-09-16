@@ -11,23 +11,45 @@ public class Main {
     public static void main(String[] args) {
 
 
-        //Crear un pais
-        Pais paisArgentina = new Pais(1,"Argentina", new HashSet<>());
+        //Crear un pais con builder
+        Pais paisArgentina = Pais.builder()
+                .id(1)
+                .nombre("Argentina")
+                .build();
 
         //Creando una provincia para luego relacionarla con un pais
-        Provincia buenosAires= new Provincia(1,"Buenos Aires", paisArgentina, new HashSet<>());
+        Provincia buenosAires= Provincia.builder()
+                .nombre("Buenos Aires")
+                .pais(paisArgentina)
+                .build();
+        paisArgentina.getProvincias().add(buenosAires);
 
         //Creando una localidad de Buenos Aires
-        Localidad caba = new Localidad(1,"Caba",buenosAires, new HashSet<>());
+        Localidad caba = Localidad.builder()
+                .id(1)
+                .nombre("CABA")
+                .provincia(buenosAires)
+                .build();
         buenosAires.getLocalidades().add(caba);
         
 
         //Creando un domicilio para Caba
-        Domicilio domicilioCaba = new Domicilio(1,5573,123,"C100",caba);
+        Domicilio domicilioCaba = Domicilio.builder()
+                .id(1)
+                .cp(1001)
+                .numero(2001)
+                .calle("Burgos")
+                .localidad(caba)
+                .build();
         caba.getDomicilios().add(domicilioCaba);
 
         //Ahora a cruzar los dedos y crear la sucursal
-        Sucursal sucursal1 = new Sucursal(1, "Sucursal CABA", LocalTime.of(9,0), LocalTime.of(18,0),true, domicilioCaba);
+        Sucursal sucursal1 = Sucursal.builder()
+                .id(1)
+                .nombre("Sucursal1 CABA")
+                .horarioApertura(LocalTime.of(8, 0))
+                
+                .build();
 
         //Creando una localidad (la plata)
         Localidad LaPlata = new Localidad(2,"La plata", buenosAires, new HashSet<>());
