@@ -48,20 +48,62 @@ public class Main {
                 .id(1)
                 .nombre("Sucursal1 CABA")
                 .horarioApertura(LocalTime.of(8, 0))
-                
+                .horarioCierre(LocalTime.of(18, 0))
+                .esCasaMatriz(true)
+                .domicilio(domicilioCaba)
                 .build();
 
         //Creando una localidad (la plata)
-        Localidad LaPlata = new Localidad(2,"La plata", buenosAires, new HashSet<>());
+        Localidad LaPlata = Localidad.builder()
+                .id(2)
+                .nombre("La Plata")
+                .provincia(buenosAires)
+                .build();
+        buenosAires.getLocalidades().add(LaPlata);
 
         //Domicilio para la plata
-        Domicilio domiLaPlata = new Domicilio(1,3344,123,"AV santa fe",LaPlata);
+        Domicilio domiLaPlata = Domicilio.builder()
+                .id(2)
+                .cp(1002)
+                .numero(2002)
+                .calle("Avenida Santa Fe")
+                .localidad(LaPlata)
+                .build();
+        LaPlata.getDomicilios().add(domiLaPlata);
 
         //Creando Cordoba
-        Provincia Cordoba = new Provincia(2,"Córdoba ", paisArgentina, new HashSet<>());
+        Provincia Cordoba = Provincia.builder()
+                .id(2)
+                .nombre("Cordoba")
+                .pais(paisArgentina)
+                .build();
+        paisArgentina.getProvincias().add(Cordoba);
 
         //Localidad para cordoba
-        Localidad cordobaCapital = new Localidad(1,"Cordoba Capital",Cordoba, new HashSet<>());
+        Localidad cordobaCapital = Localidad.builder()
+                .id(3)
+                .nombre("Cordoba Capital")
+                .provincia(Cordoba)
+                .build();
+        Cordoba.getLocalidades().add(cordobaCapital);
+
+        //Creando una empresa y asociando la sucursal
+        Empresa empresa = Empresa.builder()
+                .id(1)
+                .nombre("CuyoTecno")
+                .razonSocial("CuyoTecno SRL")
+                .logo("Logologo")
+                .cuit(20345678902L)
+                .build();
+        empresa.getSucursales().add(sucursal1);
+
+
+        //Mostrando por pantalla
+        System.out.println("Empresa: " + empresa.getNombre());
+        System.out.println("Pais" + paisArgentina.getNombre());
+        System.out.println("Provincia" + buenosAires.getNombre());
+        System.out.println("Localidad" + LaPlata.getNombre());
+        System.out.println("Domicilio" + domicilioCaba.getCalle());
 
     }
 }
