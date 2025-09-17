@@ -171,5 +171,44 @@ public class Main {
         System.out.println("Localidad" + LaPlata.getNombre());
         System.out.println("Domicilio" + domicilioCaba.getCalle());
 
+
+
+        //CRUD de empresas
+
+        EmpresaServicio servicio = new EmpresaServicio();
+
+        //Guardar empresas
+        servicio.guardar(empresa);
+        servicio.guardar(empresa2);
+
+        //Listar empresas
+        servicio.listar();
+
+        //Buscar empresa por ID
+        System.out.println("\n Buscar empresa por ID 1: ");
+        Empresa encontrada = servicio.buscarXId(1);
+        System.out.println(encontrada != null ? encontrada.getNombre() : "No encontrada");
+
+        //Buscar empresa por nombre
+        System.out.println("\n Buscar empresa por nombre 'Centro Tecno' :");
+        Empresa encontrada2 = servicio.buscarXnombre("CentroTecno");
+        System.out.println(encontrada2 != null ? encontrada.getNombre() : "No encontrada");
+
+        //Actualizar CUIT
+        System.out.println("\n >>>>>> Actualizando CUIT de Cuyo Tecno...");
+        boolean actualizado = servicio.actualizarCuit(1,209999999L);
+        System.out.println(actualizado ? "Cuit actualizado con exito. " : "Error al actualizar. ");
+
+        //Listar de nuevo
+        servicio.listar();
+
+        //Eliminar empresa
+        System.out.println("\n>> Eliminando empresa con ID 2");
+        boolean eliminada = servicio.eliminar(2);
+        System.out.println(eliminada ? "Empresa eliminada. " : "Error al eliminar. ");
+
+        //Listar final
+        servicio.listar();
+
     }
 }
