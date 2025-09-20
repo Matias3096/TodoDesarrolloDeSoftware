@@ -1,5 +1,7 @@
-package org.example.modelo;
+package org.example.servicio;
 
+
+import org.example.modelo.Empresa;
 
 import java.util.HashSet;
 import java.util.Set;
