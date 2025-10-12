@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // API de JUnit 5 (para usar @Test, asserts, etc.)
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+
+    // Engine que ejecuta los tests
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+
+    // Launcher explícito (Gradle 9 lo necesita sí o sí en runtime)
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
