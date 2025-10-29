@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+<persistence-unit name="miUnidadDePersistencia" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Clases pueden listarse aquí o detectarse automáticamente -->
+        <class>org.example.modelo.UnidadMedida</class>
+        <class>org.example.modelo.Categoria</class>
+        <class>org.example.modelo.Articulo</class>
+        <class>org.example.modelo.ArticuloInsumo</class>
+        <class>org.example.modelo.ArticuloManufacturado</class>
+        <class>org.example.modelo.Cliente</class>
+        <class>org.example.modelo.Factura</class>
+        <class>org.example.modelo.FacturaDetalle</class>
+        <class>org.example.modelo.Imagen</class>
+
+        <properties>
+            <!-- H2 en memoria para pruebas; cambia URL/driver/user/pass para MySQL/Postgres -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:h2:file:C:/Users/Matias Fernandez/IdeaProjects/TP-JPQL/database/tpjpa2;DB_CLOSE_DELAY=-1"/>
+            <property name="javax.persistence.jdbc.user" value="tpJPQL"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <!-- Hibernate props -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.archive.autodetection" value="class, hbm"/>
+        </properties>
+    </persistence-unit>
+</persistence>

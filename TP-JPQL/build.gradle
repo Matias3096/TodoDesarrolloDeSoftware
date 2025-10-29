@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application' //nos permite ejecutar un Main si queremos probar
+}
+
+group = 'org.example'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) //17 o 21 si tu entorno lo soporta
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //JPA /Hibernate
+    implementation 'org.hibernate.orm:hibernate-core:6.3.1.Final'
+    implementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+
+    //Base de datos en memoria para pruebas
+    runtimeOnly 'com.h2database:h2:2.2.224'
+
+    //Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    //Loggin (Hibernate usa SLF4J)
+    implementation 'org.slf4j:slf4j-simple:2.0.13'
+    //Opcional para pruebas unitarias
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+application {
+    mainClass = 'org.example.MainApp' //La clase que haremos para probar JPA
+}
+
+test {
+    useJUnitPlatform()
+}

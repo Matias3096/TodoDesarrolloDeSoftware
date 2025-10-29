@@ -1,0 +1,974 @@
+2025-10-17 22:31:50.663666-03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA[*].TABLE_PRIVILEGES"
+Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA[*].TABLE_PRIVILEGES"; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA.TABLE_PRIVILEGES [42000-240]
+2025-10-17 22:31:52.466632-03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA[*].TABLE_PRIVILEGES"
+Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA[*].TABLE_PRIVILEGES"; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA.TABLE_PRIVILEGES [42000-240]
+2025-10-17 22:31:53.414770-03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA[*].TABLE_PRIVILEGES"
+Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA[*].TABLE_PRIVILEGES"; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.TABLES INFORMATION_SCHEMA.TABLE_PRIVILEGES [42000-240]
+2025-10-17 22:49:42.829351-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:49:42.830704-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:49:42.832330-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:49:42.834487-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:49:42.836465-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:49:42.837625-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:49:42.839447-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:49:42.840777-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:49:42.842030-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:49:42.843910-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:49:42.846397-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:49:42.847149-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:49:42.849087-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:49:42.850536-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:49:50.818924-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:49:50.821447-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:49:50.823004-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:49:50.825132-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:49:50.827001-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:49:50.828036-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:49:50.829016-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:49:50.830001-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:49:50.831492-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:49:50.833038-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:49:50.834036-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:49:50.835037-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:49:50.836034-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:49:50.837034-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:49:53.065498-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:49:58.220534-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:49:58.222544-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:49:58.223531-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:49:58.226537-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:49:58.227532-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:49:58.228532-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:49:58.230531-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:49:58.234305-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:49:58.235302-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:49:58.237295-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:49:58.238707-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:49:58.239769-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:49:58.241718-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:49:58.242718-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:49:58.928742-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:49:58.930794-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:49:58.932310-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:49:58.934310-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:49:58.936307-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:49:58.937305-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:49:58.939305-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:49:58.940303-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:49:58.941304-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:49:58.942304-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:49:58.943304-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:49:58.944304-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:49:58.945304-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:49:58.946311-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:49:59.470031-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:49:59.471554-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:49:59.472666-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:49:59.473647-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:49:59.475646-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:49:59.476642-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:49:59.478694-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:49:59.480670-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:49:59.481642-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:49:59.482642-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:49:59.483779-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:49:59.486353-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:49:59.487352-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:49:59.488353-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:50:07.718025-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:50:07.719090-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:50:07.721049-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:50:07.722025-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:50:07.724227-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:50:07.725521-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:50:07.727117-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:50:07.728037-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:50:07.729038-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:50:07.730037-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:50:07.731037-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:50:07.733110-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:50:07.735008-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:50:07.736015-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:50:31.865276-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:50:39.889986-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:50:39.892083-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:50:39.895079-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:50:39.897079-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:50:39.899080-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:50:39.901082-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:50:39.903080-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:50:39.904084-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:50:39.905168-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:50:39.906171-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:50:39.907078-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:50:39.908083-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:50:39.909079-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:50:39.910082-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1), [42104-240]
+2025-10-17 22:51:36.033229-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:51:36.036261-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:51:36.039311-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:51:36.040257-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:51:36.041269-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:51:36.042258-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:51:36.044258-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:51:36.047205-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:51:36.049134-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:51:36.050083-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:51:36.051133-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:51:36.052083-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:51:36.053179-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:51:36.054083-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-17 22:51:46.040838-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+-- UNIDADMEDIDA
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Unidad') [42104-240]
+2025-10-17 22:51:46.044477-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Kg') [42104-240]
+2025-10-17 22:51:46.045736-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UNIDADMEDIDA" not found (this database is empty); SQL statement:
+INSERT INTO UNIDADMEDIDA (DENOMINACION) VALUES ('Litro') [42104-240]
+2025-10-17 22:51:46.047743-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+-- CATEGORIA
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Bebidas', FALSE) [42104-240]
+2025-10-17 22:51:46.049734-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Comidas', FALSE) [42104-240]
+2025-10-17 22:51:46.051794-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIA" not found (this database is empty); SQL statement:
+INSERT INTO CATEGORIA (DENOMINACION, ESINSUMO) VALUES ('Insumos Cocina', TRUE) [42104-240]
+2025-10-17 22:51:46.052737-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULO" not found (this database is empty); SQL statement:
+-- ARTICULOS (productos e insumos)
+INSERT INTO ARTICULO (CODIGO, DENOMINACION, PRECIOVENTA, UNIDADMEDIDA_FK, CATEGORIA_FK) VALUES
+('A001', 'Coca Cola 500ml', 800, 3, 1),
+('A002', 'Hamburguesa Completa', 2500, 1, 2),
+('A003', 'Pan de Hamburguesa', 200, 1, 3),
+('A004', 'Medallón de Carne', 800, 1, 3),
+('A005', 'Queso Cheddar', 900, 1, 3) [42104-240]
+2025-10-17 22:51:46.053739-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOINSUMO" not found (this database is empty); SQL statement:
+-- ARTICULOINSUMO
+INSERT INTO ARTICULOINSUMO (ID, ESPARAELABORAR, PRECIOCOMPRA, STOCKACTUAL, STOCKMAXIMO)
+VALUES (3, TRUE, 100, 100, 500),
+       (4, TRUE, 350, 80, 400),
+       (5, TRUE, 500, 60, 300) [42104-240]
+2025-10-17 22:51:46.054742-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADO" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADO (producto final)
+INSERT INTO ARTICULOMANUFACTURADO (ID, DESCRIPCION, PREPARACION, TIEMPOESTIMADOMINUTOS)
+VALUES (2, 'Hamburguesa Completa con papas', 'Armar pan, carne, queso y aderezos', 15) [42104-240]
+2025-10-17 22:51:46.055738-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ARTICULOMANUFACTURADODETALLE" not found (this database is empty); SQL statement:
+-- ARTICULOMANUFACTURADODETALLE (detalle de receta)
+INSERT INTO ARTICULOMANUFACTURADODETALLE (CANTIDAD, ARTICULOINSUMO_FK, ARTICULOMANUFACTURADO_FK)
+VALUES (1, 3, 2), (1, 4, 2), (1, 5, 2) [42104-240]
+2025-10-17 22:51:46.056348-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+-- CLIENTES
+INSERT INTO CLIENTE (CUIT, RAZONSOCIAL) VALUES
+('20-12345678-9', 'Juan Pérez'),
+('27-98765432-1', 'Comidas Mendoza SRL') [42104-240]
+2025-10-17 22:51:46.057382-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURA" not found (this database is empty); SQL statement:
+-- FACTURAS
+INSERT INTO FACTURA (FECHAALTA, FECHACOMPROBANTE, NROCOMPROBANTE, PUNTOVENTA, TOTAL, CLIENTEID_FK)
+VALUES (CURRENT_DATE(), CURRENT_DATE(), 1001, 1, 3300, 1) [42104-240]
+2025-10-17 22:51:46.058382-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FACTURADETALLE" not found (this database is empty); SQL statement:
+-- FACTURADETALLE
+INSERT INTO FACTURADETALLE (CANTIDAD, SUBTOTAL, ARTICULOID_FK, FACTURAID_FK)
+VALUES (1, 2500, 2, 1),
+       (1, 800, 1, 1) [42104-240]
+2025-10-17 22:51:46.059378-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "IMAGEN" not found (this database is empty); SQL statement:
+-- IMAGENES
+INSERT INTO IMAGEN (DENOMINACION, ARTICULO_FK)
+VALUES ('/imagenes/coca.png', 1),
+       ('/imagenes/hamburguesa.png', 2) [42104-240]
+2025-10-21 09:22:50.700066-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.717867-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.717867-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.733612-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.733612-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.768066-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.769881-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.769881-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.769881-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-21 09:22:50.769881-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.395082-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.411524-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.411524-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.419519-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.419519-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.453243-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.453243-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.464426-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.472427-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-22 17:33:48.472427-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.095455-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.111071-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.111071-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.111071-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.111071-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.129217-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.129217-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.129217-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.129217-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-23 20:49:28.129217-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.455934-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.455934-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.471557-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.471557-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.471557-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.487180-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.502806-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.502806-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.502806-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:02.502806-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.328583-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.344279-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.344279-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.359901-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.359901-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.375525-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.375525-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.391148-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.391148-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:04:41.391148-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.308895-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.308895-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.308895-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.308895-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.308895-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.324541-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.324541-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.342511-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.344258-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:14:07.344258-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.813511-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.813511-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.813511-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.813511-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.813511-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.829737-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.829737-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.829737-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.829737-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:20:14.829737-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.042145-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.042145-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.042145-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.042145-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.042145-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.058496-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.058496-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.074129-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.074129-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:21:22.074129-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:15.981393-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:15.997027-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:15.997027-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:15.997027-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:15.997027-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:15.997027-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:15.997027-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:16.012654-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:16.012654-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:22:16.012654-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.075763-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.092444-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.092444-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.092444-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.092444-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.092444-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.108579-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.108579-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.108579-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-27 19:23:15.108579-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.034556-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.050177-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.050177-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.050177-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.050177-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.081424-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.084693-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.098316-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.098316-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2025-10-29 00:40:09.098316-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
